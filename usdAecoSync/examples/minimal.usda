@@ -1,0 +1,66 @@
+#usda 1.0
+(
+    defaultPrim = "Model"
+    fallbackPrimTypes = {
+        token[] AecoSyncDiagnostic = ["Scope"]
+    }
+    metersPerUnit = 1
+    upAxis = "Z"
+)
+
+def Xform "Model"
+{
+    def Cube "Wall" (
+        prepend apiSchemas = ["AecoElementAPI", "AecoHostBindingAPI:ifc"]
+    )
+    {
+        string aeco:host:ifc:ref = "ea7a9faa-f8a1-4c35-9666-74fb3ba1a281"
+        string aeco:id = "ea7a9faa-f8a1-4c35-9666-74fb3ba1a281"
+        color3f[] primvars:displayColor = [(0.55, 0.65, 0.78)]
+        uniform token purpose = "render"
+        double size = 2
+        float3 xformOp:scale = (3, 0.15, 1.5)
+        double3 xformOp:translate = (0, 0, 1.5)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+    }
+
+    def Cube "Floor"
+    {
+        color3f[] primvars:displayColor = [(0.72, 0.75, 0.79)]
+        uniform token purpose = "render"
+        double size = 2
+        float3 xformOp:scale = (3.5, 2.3, 0.1)
+        double3 xformOp:translate = (0, 0, -0.1)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+    }
+
+    def Cylinder "Pipe" (
+        prepend apiSchemas = ["AecoElementAPI", "AecoHostBindingAPI:ifc"]
+    )
+    {
+        string aeco:host:ifc:ref = "88c6ec31-2ae3-4696-974e-fa278c2f84a5"
+        string aeco:id = "88c6ec31-2ae3-4696-974e-fa278c2f84a5"
+        uniform token axis = "X"
+        double height = 5.2
+        color3f[] primvars:displayColor = [(0.13, 0.58, 0.62)]
+        uniform token purpose = "render"
+        double radius = 0.13
+        double3 xformOp:translate = (0, -0.5, 2.35)
+        uniform token[] xformOpOrder = ["xformOp:translate"]
+    }
+}
+
+def "Sync"
+{
+    def "Diagnostics"
+    {
+        def "ifc"
+        {
+            def AecoSyncDiagnostic "Example"
+            {
+                string aeco:diag:message = "Example diagnostic; edit drivers and let the host solve."
+            }
+        }
+    }
+}
+

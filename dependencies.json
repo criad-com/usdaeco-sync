@@ -1,0 +1,65 @@
+{
+  "repos": {
+    "toolchain": {
+      "repo": "usdaeco-toolchain",
+      "library": "usdaeco-toolchain",
+      "ref": "v0.3.8"
+    },
+    "core": {
+      "repo": "usdaeco-core",
+      "library": "usdAeco",
+      "ref": "v0.9.2"
+    },
+    "axis": {
+      "repo": "usdaeco-axis",
+      "library": "usdAecoAxis",
+      "ref": "v0.1.2"
+    }
+  },
+  "observations": {
+    "usdAeco": {
+      "version": "0.9.2",
+      "revision": "11000b2ca7a2f560bfcd1ffd439bf9b71a5f5c18",
+      "source": "frozen release tag checkout",
+      "pluginSource": "committed schema resource directory"
+    },
+    "python": {
+      "usd-core": "26.8",
+      "numpy": "2.5.3",
+      "packaging": "26.3",
+      "setuptools": "absent; source tests only"
+    },
+    "usdAecoAxis": {
+      "version": "0.1.2",
+      "revision": "17ca6c18f7c263c3501bc3e3580d44f630548591",
+      "source": "frozen release tag checkout",
+      "pluginSource": "committed schema resource directory"
+    },
+    "usdaeco-toolchain": {
+      "version": "0.3.8",
+      "revision": "4ec5051c419ef056dba594e64be661cb41810275",
+      "source": "frozen release tag checkout"
+    },
+    "usdAecoCctv": {
+      "version": "0.5.2",
+      "revision": "179318a090657af530d83552388e0c6fd9360631",
+      "source": "frozen release tag checkout",
+      "pluginSource": "committed schema resource directory"
+    },
+    "nix": {
+      "attempts": 1,
+      "status": "not-proven",
+      "cause": "The single offline attempt failed before evaluation: the outbound-network restriction also denied access to the local Nix daemon socket. No retry was made."
+    }
+  },
+  "fixtures": {
+    "tests/fixtures/usdAecoKindProto": {
+      "library": "usdAecoKindProto",
+      "version": "0.0.0",
+      "reason": "Historical prototype APIs for fake-host regressions; retained core >=0.7 metadata is fixture data."
+    },
+    "tests/test_requirements.py": {
+      "reason": "Synthetic historical and incompatible versions exercise dependency bounds; these are not direct dependency pins."
+    }
+  }
+}

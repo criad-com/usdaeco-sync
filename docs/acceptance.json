@@ -1,0 +1,183 @@
+{
+  "checks": 52,
+  "failed": 0,
+  "pytest": 275,
+  "rawStructure": [
+    {
+      "rule": "S01",
+      "passed": true,
+      "detail": "MIT (declared)"
+    },
+    {
+      "rule": "S02",
+      "passed": true,
+      "detail": "readme"
+    },
+    {
+      "rule": "S03",
+      "passed": true,
+      "detail": "metadata"
+    },
+    {
+      "rule": "S04",
+      "passed": true,
+      "detail": "dependency pins"
+    },
+    {
+      "rule": "S05",
+      "passed": true,
+      "detail": "flake"
+    },
+    {
+      "rule": "S06",
+      "passed": true,
+      "detail": "layout"
+    },
+    {
+      "rule": "S07",
+      "passed": true,
+      "detail": "global metadata"
+    },
+    {
+      "rule": "S08",
+      "passed": true,
+      "detail": "classes"
+    },
+    {
+      "rule": "S09",
+      "passed": true,
+      "detail": "namespaces"
+    },
+    {
+      "rule": "S10",
+      "passed": true,
+      "detail": "applicability"
+    },
+    {
+      "rule": "S11",
+      "passed": true,
+      "detail": "usdGenSchema --validate clean; compiler compatibility only"
+    },
+    {
+      "rule": "S12",
+      "passed": true,
+      "detail": "resource plugin"
+    },
+    {
+      "rule": "S13",
+      "passed": true,
+      "detail": "user docs"
+    },
+    {
+      "rule": "S14",
+      "passed": true,
+      "detail": "validator descriptor"
+    },
+    {
+      "rule": "S15",
+      "passed": true,
+      "detail": "validator tokens"
+    },
+    {
+      "rule": "S16",
+      "passed": true,
+      "detail": "2 validators discovered and loaded"
+    },
+    {
+      "rule": "S17",
+      "passed": true,
+      "detail": "tests"
+    },
+    {
+      "rule": "S18",
+      "passed": true,
+      "detail": "companion"
+    },
+    {
+      "rule": "S19",
+      "passed": true,
+      "detail": "profile"
+    },
+    {
+      "rule": "S20",
+      "passed": true,
+      "detail": "not applicable (library)"
+    },
+    {
+      "rule": "S21",
+      "passed": true,
+      "detail": "not applicable (library)"
+    },
+    {
+      "rule": "S22",
+      "passed": true,
+      "detail": "not applicable (library)"
+    },
+    {
+      "rule": "S23",
+      "passed": true,
+      "detail": "render caps"
+    },
+    {
+      "rule": "S24",
+      "passed": true,
+      "detail": "2 stage roots compose without family plugins"
+    },
+    {
+      "rule": "S25",
+      "passed": true,
+      "detail": "terms"
+    },
+    {
+      "rule": "S26",
+      "passed": true,
+      "detail": "check contract"
+    },
+    {
+      "rule": "S27",
+      "passed": true,
+      "detail": "not applicable (library)"
+    },
+    {
+      "rule": "S28",
+      "passed": true,
+      "detail": "not applicable (library)"
+    },
+    {
+      "rule": "S29",
+      "passed": true,
+      "detail": "not applicable (library)"
+    }
+  ],
+  "coreValidators": 8,
+  "deviations": [
+    "The single offline attempt failed before evaluation: the outbound-network restriction also denied access to the local Nix daemon socket. No retry was made.",
+    "Wheel installation remains not proven; source checks require no setuptools or environment installation."
+  ],
+  "version": "0.5.4",
+  "notRun": 0,
+  "pytestSkipped": 0,
+  "packaging": {
+    "packages": 4,
+    "dataFiles": 5,
+    "missingPaths": 0,
+    "setuptools": "absent",
+    "wheelInstallation": "not-proven"
+  },
+  "nix": {
+    "attempts": 1,
+    "status": "not-proven",
+    "cause": "The single offline attempt failed before evaluation: the outbound-network restriction also denied access to the local Nix daemon socket. No retry was made."
+  },
+  "publicNames": {
+    "organization": "criad-com",
+    "referencesUpdated": 23,
+    "filesUpdated": 5,
+    "remainingOldReferences": 0
+  },
+  "toolchain": {
+    "version": "0.3.8",
+    "revision": "4ec5051c419ef056dba594e64be661cb41810275",
+    "structureChecks": 29
+  }
+}

@@ -1,0 +1,8 @@
+#usda 1.0
+(subLayers = [@../schema.usda@])
+over "AecoHostBindingAPI" (customData = {
+    string userDocBrief = "Cached native handles for one host; identity remains aeco:id."
+}) {}
+over "AecoSyncDiagnostic" (customData = {
+    string userDocBrief = "Transient host finding in the diagnostics layer."
+}) {}

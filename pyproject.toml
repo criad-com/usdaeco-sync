@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "usdaeco-sync"
+version = "0.5.4"
+description = "Host-independent USD layer transactions"
+readme = "README.md"
+license = {file = "LICENSE"}
+requires-python = ">=3.11"
+dependencies = ["usd-core==26.8", "numpy>=1.26", "packaging>=23"]
+
+[project.scripts]
+aeco-sync = "usdaeco_sync.cli:main"
+
+[tool.setuptools]
+include-package-data = false
+packages = ["aeco_sync", "aeco_sync.hosts", "usdaeco_sync", "usdAecoSyncValidators"]
+package-dir = {usdaeco_sync = "tools/usdaeco_sync"}
+
+[tool.setuptools.package-data]
+# The validator descriptor is the only package data; host scripts live in integrations.
+usdAecoSyncValidators = ["plugInfo.json"]
+
+[tool.setuptools.data-files]
+"share/usdaeco-sync/usdAecoSync" = ["usdAecoSync/plugInfo.json", "usdAecoSync/generatedSchema.usda", "usdAecoSync/schema.usda"]
+"share/usdaeco-sync/registries" = ["registries/host_names.json"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests", "testenv"]
+python_files = ["test*.py"]

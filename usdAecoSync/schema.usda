@@ -1,0 +1,46 @@
+#usda 1.0
+(
+    subLayers = [@usd/schema.usda@, @usdGeom/schema.usda@, @usdAeco/schema.usda@]
+)
+
+over "GLOBAL" (
+    customData = {
+        string libraryName = "usdAecoSync"
+        bool skipCodeGeneration = true
+        bool useLiteralIdentifier = true
+    }
+) {}
+
+class "AecoHostBindingAPI" (
+    inherits = </APISchemaBase>
+    doc = "Cached host handles; one instance per registered host name. Identity remains aeco:id."
+    customData = {
+        string className = "HostBindingAPI"
+        token apiSchemaType = "multipleApply"
+        token[] apiSchemaCanOnlyApplyTo = ["Imageable", "Scope"]
+        token propertyNamespacePrefix = "aeco:host"
+    }
+) {
+    string ref = "" (doc = "Durable native handle: GlobalId, UniqueId or owner handle plus connector id.")
+    string localRef = "" (doc = "Volatile native handle: STEP id, ElementId or object name.")
+    string version = "" (doc = "Opaque native change token at the last read-back.")
+    string document = "" (doc = "Host document identifier; file adapters use the absolute path.")
+}
+
+class AecoSyncDiagnostic "AecoSyncDiagnostic" (
+    inherits = </Typed>
+    doc = "Transient machine finding under /Sync/Diagnostics; information time is layer metadata."
+    customData = {
+        string className = "SyncDiagnostic"
+        token[] fallbackTypes = ["Scope"]
+    }
+) {
+    uniform token aeco:diag:severity = "warning" (allowedTokens = ["info", "warning", "error"])
+    string aeco:diag:code = "" (doc = "Stable host-qualified code or a registered kind validator code.")
+    string aeco:diag:message = ""
+    uniform token aeco:diag:host = ""
+    uniform token aeco:diag:phase = "apply" (allowedTokens = ["apply", "regenerate", "validate", "export"])
+    bool aeco:diag:blocking = false (doc = "This finding prevented application; affected intent remains pending.")
+    string[] aeco:diag:hostRefs = []
+    rel aeco:diag:about (doc = "Affected elements, ports, types or intent property paths.")
+}

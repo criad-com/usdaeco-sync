@@ -1,0 +1,22 @@
+{
+  "Plugins": [
+    {
+      "Type": "python",
+      "Name": "usdAecoSyncValidators",
+      "Root": "..",
+      "Info": {
+        "Validators": {
+          "keywords": [
+            "UsdAecoSyncValidators"
+          ],
+          "BindingsChecker": {
+            "doc": "Check registered host names and required bindings across prims."
+          },
+          "IntentChecker": {
+            "doc": "Reject derived opinions and stale intent versions."
+          }
+        }
+      }
+    }
+  ]
+}

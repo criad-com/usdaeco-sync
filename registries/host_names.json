@@ -1,0 +1,9 @@
+{
+  "version": "1.0",
+  "hosts": {
+    "ifc": {"status": "reserved", "description": "IFC file adapter"},
+    "bonsai": {"status": "reserved", "description": "Bonsai authoring adapter"},
+    "revit": {"status": "reserved", "description": "Revit authoring adapter"},
+    "navisworks": {"status": "reserved", "description": "Review adapter; no implementation yet"}
+  }
+}

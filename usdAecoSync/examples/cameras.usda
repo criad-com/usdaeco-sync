@@ -1,0 +1,15 @@
+#usda 1.0
+(
+    defaultPrim = "Renders"
+)
+
+def "Renders"
+{
+    def Camera "overview"
+    {
+        float focalLength = 42
+        matrix4d xformOp:transform = ( (0.8192319205190405, 0.5734623443633284, -2.7755575615628914e-17, 0), (-0.20986084936621505, 0.29980121338030724, 0.9306329332013704, -0), (0.5336829436153786, -0.7624042051648265, 0.36595401847911674, 0), (7, -10, 6, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform"]
+    }
+}
+

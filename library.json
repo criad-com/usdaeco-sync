@@ -1,0 +1,13 @@
+{
+  "name": "usdAecoSync",
+  "version": "0.5.4",
+  "licence": "MIT",
+  "kind": "library",
+  "tier": "record",
+  "requires": {
+    "usdAeco": ">=0.9.2,<1.0",
+    "usdAecoAxis": ">=0.1,<0.2"
+  },
+  "classPrefixes": ["AecoHostBinding", "AecoSync"],
+  "namespaces": ["host", "diag"]
+}
