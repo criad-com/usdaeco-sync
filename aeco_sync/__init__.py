@@ -1,6 +1,6 @@
 """usdAeco sync: intent in, host results and diagnostics out."""
 
-__version__ = "0.5.4"
+__version__ = "0.5.5"
 
 
 def register_plugins(core=None, kind=None):

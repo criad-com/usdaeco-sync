@@ -39,7 +39,7 @@
                         "usdAecoAxis": ">=0.1,<0.2"
                     }, 
                     "tier": "record", 
-                    "version": "0.5.4"
+                    "version": "0.5.5"
                 }
             }, 
             "LibraryPath": "", 

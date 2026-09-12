@@ -3,23 +3,26 @@
     "toolchain": {
       "repo": "usdaeco-toolchain",
       "library": "usdaeco-toolchain",
-      "ref": "v0.3.8"
+      "ref": "v0.3.10",
+      "revision": "59d3da5ff5114089b54efaaae38efdd7fe1b8e73"
     },
     "core": {
       "repo": "usdaeco-core",
       "library": "usdAeco",
-      "ref": "v0.9.2"
+      "ref": "v0.9.5",
+      "revision": "683adc3280254bc71b396a9c64a359cc708788f4"
     },
     "axis": {
       "repo": "usdaeco-axis",
       "library": "usdAecoAxis",
-      "ref": "v0.1.2"
+      "ref": "v0.1.5",
+      "revision": "ecff1d98bcc45c22fcceefd453374671900793ae"
     }
   },
   "observations": {
     "usdAeco": {
-      "version": "0.9.2",
-      "revision": "11000b2ca7a2f560bfcd1ffd439bf9b71a5f5c18",
+      "version": "0.9.5",
+      "revision": "683adc3280254bc71b396a9c64a359cc708788f4",
       "source": "frozen release tag checkout",
       "pluginSource": "committed schema resource directory"
     },
@@ -27,17 +30,20 @@
       "usd-core": "26.8",
       "numpy": "2.5.3",
       "packaging": "26.3",
+      "Pillow": "12.3.0",
+      "pytest": "9.1.1",
+      "jinja2": "3.1.6",
       "setuptools": "absent; source tests only"
     },
     "usdAecoAxis": {
-      "version": "0.1.2",
-      "revision": "17ca6c18f7c263c3501bc3e3580d44f630548591",
+      "version": "0.1.5",
+      "revision": "ecff1d98bcc45c22fcceefd453374671900793ae",
       "source": "frozen release tag checkout",
       "pluginSource": "committed schema resource directory"
     },
     "usdaeco-toolchain": {
-      "version": "0.3.8",
-      "revision": "4ec5051c419ef056dba594e64be661cb41810275",
+      "version": "0.3.10",
+      "revision": "59d3da5ff5114089b54efaaae38efdd7fe1b8e73",
       "source": "frozen release tag checkout"
     },
     "usdAecoCctv": {
@@ -49,7 +55,18 @@
     "nix": {
       "attempts": 1,
       "status": "not-proven",
-      "cause": "The single offline attempt failed before evaluation: the outbound-network restriction also denied access to the local Nix daemon socket. No retry was made."
+      "exitCode": 1,
+      "evaluatedDerivations": 5,
+      "system": "aarch64-darwin",
+      "overrides": [
+        "toolchain",
+        "core",
+        "axis",
+        "toolchain/core",
+        "core/datacentre",
+        "axis/datacentre"
+      ],
+      "cause": "The single offline attempt with six local source overrides evaluated five Darwin derivations, then started uncached external source-fetch builds despite --offline. The agent interrupted the attempt to honor the network restriction (exit 1); no retry or lockfile was written. Nix builds and clean public GitHub resolution remain not proven."
     }
   },
   "fixtures": {
@@ -60,6 +77,9 @@
     },
     "tests/test_requirements.py": {
       "reason": "Synthetic historical and incompatible versions exercise dependency bounds; these are not direct dependency pins."
+    },
+    "docs/requirements-evidence.json": {
+      "reason": "Historical source audit for sync 0.4.4; preserved evidence, not a current dependency or flake input."
     }
   }
 }

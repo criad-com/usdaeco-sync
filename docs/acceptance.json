@@ -151,10 +151,11 @@
   ],
   "coreValidators": 8,
   "deviations": [
-    "The single offline attempt failed before evaluation: the outbound-network restriction also denied access to the local Nix daemon socket. No retry was made.",
+    "The single offline attempt with six local source overrides evaluated five Darwin derivations, then started uncached external source-fetch builds despite --offline. The agent interrupted the attempt to honor the network restriction (exit 1); no retry or lockfile was written. Nix builds and clean public GitHub resolution remain not proven.",
+    "No result crate or vanilla render exists in this library; integrations own executable round-trip publication. The existing documentation image was retained byte-identically.",
     "Wheel installation remains not proven; source checks require no setuptools or environment installation."
   ],
-  "version": "0.5.4",
+  "version": "0.5.5",
   "notRun": 0,
   "pytestSkipped": 0,
   "packaging": {
@@ -164,20 +165,120 @@
     "setuptools": "absent",
     "wheelInstallation": "not-proven"
   },
+  "pins": {
+    "toolchain": {
+      "repo": "usdaeco-toolchain",
+      "library": "usdaeco-toolchain",
+      "ref": "v0.3.10",
+      "revision": "59d3da5ff5114089b54efaaae38efdd7fe1b8e73"
+    },
+    "core": {
+      "repo": "usdaeco-core",
+      "library": "usdAeco",
+      "ref": "v0.9.5",
+      "revision": "683adc3280254bc71b396a9c64a359cc708788f4"
+    },
+    "axis": {
+      "repo": "usdaeco-axis",
+      "library": "usdAecoAxis",
+      "ref": "v0.1.5",
+      "revision": "ecff1d98bcc45c22fcceefd453374671900793ae"
+    }
+  },
+  "toolchain": {
+    "version": "0.3.10",
+    "revision": "59d3da5ff5114089b54efaaae38efdd7fe1b8e73",
+    "structureChecks": 29
+  },
   "nix": {
     "attempts": 1,
     "status": "not-proven",
-    "cause": "The single offline attempt failed before evaluation: the outbound-network restriction also denied access to the local Nix daemon socket. No retry was made."
+    "exitCode": 1,
+    "evaluatedDerivations": 5,
+    "system": "aarch64-darwin",
+    "overrides": [
+      "toolchain",
+      "core",
+      "axis",
+      "toolchain/core",
+      "core/datacentre",
+      "axis/datacentre"
+    ],
+    "cause": "The single offline attempt with six local source overrides evaluated five Darwin derivations, then started uncached external source-fetch builds despite --offline. The agent interrupted the attempt to honor the network restriction (exit 1); no retry or lockfile was written. Nix builds and clean public GitHub resolution remain not proven."
   },
   "publicNames": {
     "organization": "criad-com",
-    "referencesUpdated": 23,
-    "filesUpdated": 5,
-    "remainingOldReferences": 0
+    "familyFlakeInputs": 3,
+    "remainingOldReferences": 0,
+    "commitHashFamilyRefs": 0
   },
-  "toolchain": {
-    "version": "0.3.8",
-    "revision": "4ec5051c419ef056dba594e64be661cb41810275",
-    "structureChecks": 29
+  "publicTags": {
+    "availability": "supplied by the release table",
+    "cleanOnlineResolution": "not-proven"
+  },
+  "ranges": {
+    "changed": false,
+    "requirements": {
+      "usdAeco": ">=0.9.2,<1.0",
+      "usdAecoAxis": ">=0.1,<0.2"
+    }
+  },
+  "activePlugins": {
+    "usdAeco": "0.9.5",
+    "usdAecoAxis": "0.1.5",
+    "usdAecoCctv": "0.5.2",
+    "usdAecoSync": "0.5.5"
+  },
+  "artifacts": {
+    "baselineVersion": "0.5.4",
+    "byteIdenticalFiles": 6,
+    "files": [
+      {
+        "path": "usdAecoSync/schema.usda",
+        "beforeSha256": "57aa95e02c3746db385663646a4b1d0c0085be40b737538f8ea5c3ab808bb725",
+        "afterSha256": "57aa95e02c3746db385663646a4b1d0c0085be40b737538f8ea5c3ab808bb725",
+        "byteIdentical": true
+      },
+      {
+        "path": "usdAecoSync/generatedSchema.usda",
+        "beforeSha256": "69e08c72b8ec051e1d345a232c94556a5be5a58079934930755a0ab192451e6b",
+        "afterSha256": "69e08c72b8ec051e1d345a232c94556a5be5a58079934930755a0ab192451e6b",
+        "byteIdentical": true
+      },
+      {
+        "path": "usdAecoSync/examples/minimal.usda",
+        "beforeSha256": "599cbac949afed8585c4be4432fc5cf77a48037fad123510d764f010fd7276f9",
+        "afterSha256": "599cbac949afed8585c4be4432fc5cf77a48037fad123510d764f010fd7276f9",
+        "byteIdentical": true
+      },
+      {
+        "path": "usdAecoSync/examples/cameras.usda",
+        "beforeSha256": "96a3fad53a0caf38ca8baa5d26d90d1651c14cc4c91011fe6b749398da3db8d0",
+        "afterSha256": "96a3fad53a0caf38ca8baa5d26d90d1651c14cc4c91011fe6b749398da3db8d0",
+        "byteIdentical": true
+      },
+      {
+        "path": "usdAecoSync/userDoc/schemaUserDoc.usda",
+        "beforeSha256": "2c7126f9d87f2058e9eafd9cde7bb4afda5c48e9a7955ecfa0cba04f5fc56f35",
+        "afterSha256": "2c7126f9d87f2058e9eafd9cde7bb4afda5c48e9a7955ecfa0cba04f5fc56f35",
+        "byteIdentical": true
+      },
+      {
+        "path": "usdAecoSync/userDoc/usdAecoSyncExample.png",
+        "beforeSha256": "7020a50063f66ae9275d7b1faba705f16d0e3d370357044388831670ae09be49",
+        "afterSha256": "7020a50063f66ae9275d7b1faba705f16d0e3d370357044388831670ae09be49",
+        "byteIdentical": true
+      }
+    ],
+    "generatedPluginDelta": "Info.aeco.version only: 0.5.4 to 0.5.5",
+    "publishedResult": "not applicable (library)",
+    "vanillaRender": "not applicable (library)",
+    "documentationImage": {
+      "width": 1280,
+      "height": 800,
+      "bytes": 131395,
+      "colors": 4118,
+      "regenerated": false
+    }
   }
 }

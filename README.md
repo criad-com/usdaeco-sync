@@ -24,7 +24,7 @@ facility round trip. Sync's regression host is [tests/fake_host.py](tests/fake_h
 
 ## Build and check
 
-With core v0.9.2, axis v0.1.2 and toolchain v0.3.8 sibling source checkouts and
+With core v0.9.5, axis v0.1.5 and toolchain v0.3.10 sibling source checkouts and
 Python 3.11+ with usd-core 26.8, numpy, packaging, jinja2, Pillow and pytest:
 
 ```sh
@@ -52,7 +52,7 @@ host integration to use `aeco-sync init model.usda model.ifc --kind-import` and
 `--host-module package.module:Class`; installed integrations use entry points.
 
 Flake inputs name public source tags. For a local source mirror use
-`nix flake check --offline --override-input toolchain path:../usdaeco-toolchain
+`nix flake check --offline --no-write-lock-file --override-input toolchain path:../usdaeco-toolchain
 --override-input core path:../usdaeco-core
 --override-input axis path:../usdaeco-axis` (one shell command). The toolchain's
 repository conventions describe registry files and nested overrides.
@@ -60,7 +60,7 @@ repository conventions describe registry files and nested overrides.
 ## Family
 
 Requires `usdAeco >=0.9.2,<1.0` and `usdAecoAxis >=0.1,<0.2`; tested against
-core v0.9.2 and axis v0.1.2. This release uses tier
+core v0.9.5 and axis v0.1.5. This release uses tier
 `record`. Exact source pins are in [dependencies.json](dependencies.json).
 The [family board](https://github.com/criad-com/usdaeco-board) consumes those pins.
 
@@ -73,14 +73,16 @@ tests; `tests/` holds transaction and fake-host regressions.
 
 ## Status
 
-Version 0.5.4: 52 checks, 0 failed; 275 tests pass. Host integrations are separate
+Version 0.5.5: 52 checks, 0 failed; 275 tests pass. Host integrations are separate
 packages. The existing wire names
 are [declared explicitly](docs/host-contract.md#compatibility-and-schema-lint)
 for S08/S09. The library has no executable round-trip example; S21/S22/S27/S28/S29
 are explicitly not applicable. S23/S24 still check the existing documentation
 image and minimal stages; S25/S26 check sanitization and the gate contract.
-Native solver and wheel packaging claims belong to their measured integration
-gates; an exact readback route remains future work.
+The single offline Nix attempt evaluated five Darwin derivations; builds remain
+not proven (see [acceptance](docs/acceptance.md)). Native solver and wheel
+packaging claims belong to their measured integration gates; an exact readback
+route remains future work.
 
 ## Licence
 

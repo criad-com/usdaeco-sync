@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "usdaeco-sync"
-version = "0.5.4"
+version = "0.5.5"
 description = "Host-independent USD layer transactions"
 readme = "README.md"
 license = {file = "LICENSE"}

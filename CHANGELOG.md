@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.5.5
+
+- public re-pin: usdaeco-toolchain v0.3.10, usdaeco-core v0.9.5, usdaeco-axis v0.1.5.
+- Record checked tag revisions; retain the supported requirement ranges and optional CCTV v0.5.2 fixture.
+- Regenerate plugin metadata for v0.5.5; preserve the schema, example layers and documentation image.
+- Verify 52 checks and 275 tests; record the single offline Nix attempt separately as not proven.
+
 ## 0.5.4
 
 - Public names → github.com/criad-com.
